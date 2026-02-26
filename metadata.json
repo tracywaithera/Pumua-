@@ -1,0 +1,7 @@
+{
+  "name": "Pumua - Tubonge",
+  "description": "A holistic sanctuary for mental health featuring Tubonge, a Kenyan-localized voice therapist with M-Pesa integration for pay-as-you-vent support.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
