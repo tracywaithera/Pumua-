@@ -8,12 +8,13 @@
 
 @layer base {
   body {
-    @apply bg-[#fdfcf9] text-[#2d2a26] font-sans;
+    @apply bg-[#f2f2f7] text-[#1c1c1e] font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
 .glass {
-  @apply bg-white/40 backdrop-blur-md border border-white/20;
+  @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm;
 }
 
 .text-balance {
@@ -21,7 +22,7 @@
 }
 
 .healing-gradient {
-  background: radial-gradient(circle at 50% 50%, #fdfcf9 0%, #f5f2ed 100%);
+  background: radial-gradient(circle at 50% 50%, #f2f2f7 0%, #ffffff 100%);
 }
 
 .breathing-circle {

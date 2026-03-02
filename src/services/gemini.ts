@@ -17,8 +17,8 @@ Core Principles:
 Your goal is to make the user feel seen, understood, and supported in their journey of 'becoming'.`;
 
 export async function getTherapistResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[], userName?: string) {
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
-  const personalizedInstruction = userName 
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
+  const personalizedInstruction = userName
     ? `${SYSTEM_INSTRUCTION}\n\nThe user's name is ${userName}. Address them by their name occasionally to build rapport.`
     : SYSTEM_INSTRUCTION;
 
@@ -39,7 +39,7 @@ export async function getTherapistResponse(message: string, history: { role: 'us
 }
 
 export async function generateSpeech(text: string) {
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash-preview-tts",
     contents: [{ parts: [{ text: `Read this with a calm, therapeutic, and gentle voice: ${text}` }] }],
