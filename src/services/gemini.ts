@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { GoogleGenAI, Modality } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `You are Tubonge, a deeply emotionally intelligent and compassionate Kenyan friend and digital therapist. 

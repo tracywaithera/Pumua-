@@ -1159,11 +1159,13 @@ function ArticlesView({
 }
 
 function MovementView({ onPlaySound }: { onPlaySound?: (type?: any) => void }) {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="p-8 md:p-12 max-w-5xl mx-auto space-y-12"
+      className="p-8 md:p-12 max-w-5xl mx-auto space-y-12 relative"
     >
       <header>
         <h2 className="font-serif text-4xl mb-2">Movement & Guidance</h2>
@@ -1171,11 +1173,12 @@ function MovementView({ onPlaySound }: { onPlaySound?: (type?: any) => void }) {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {VIDEOS.map(video => (
+        {VIDEOS.map((video: any) => (
           <div
             key={video.id}
             onClick={() => {
               if (onPlaySound) onPlaySound('click');
+              setActiveVideo(video.videoId);
             }}
             className="bg-white border border-[#e5e5ea] rounded-3xl overflow-hidden hover:shadow-xl transition-all group cursor-pointer"
           >
@@ -1218,6 +1221,32 @@ function MovementView({ onPlaySound }: { onPlaySound?: (type?: any) => void }) {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 bg-black/80 backdrop-blur-sm"
+          >
+            <div className="w-full max-w-5xl aspect-video bg-black rounded-3xl overflow-hidden relative shadow-2xl">
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-colors shadow-md"
+              >
+                <X size={20} />
+              </button>
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

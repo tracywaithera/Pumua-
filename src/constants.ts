@@ -37,12 +37,12 @@ export const ARTICLES = [
 ];
 
 export const VIDEOS = [
-  { id: 'v1', title: 'Healing Meditation', category: 'Healing', duration: '15:00', thumbnail: 'https://picsum.photos/seed/healing/400/225' },
-  { id: 'v2', title: 'Neuroplasticity Basics', category: 'Insights', duration: '10:00', thumbnail: 'https://picsum.photos/seed/brain/400/225' },
-  { id: 'v3', title: 'Morning Yoga Flow', category: 'Yoga', duration: '20:00', thumbnail: 'https://picsum.photos/seed/yoga/400/225' },
-  { id: 'v4', title: 'Box Breathing Guide', category: 'Breathwork', duration: '05:00', thumbnail: 'https://picsum.photos/seed/breath/400/225' },
-  { id: 'v5', title: 'Full Body Stretching', category: 'Stretching', duration: '12:00', thumbnail: 'https://picsum.photos/seed/stretch/400/225' },
-  { id: 'v6', title: 'Womb Healing Session', category: 'Womb Work', duration: '18:00', thumbnail: 'https://picsum.photos/seed/womb/400/225' }
+  { id: 'v1', title: 'Healing Meditation', category: 'Healing', duration: '15:20', videoId: 'r8GIHkeQWLE', thumbnail: 'https://img.youtube.com/vi/r8GIHkeQWLE/hqdefault.jpg' },
+  { id: 'v2', title: 'Neuroplasticity Basics', category: 'Insights', duration: '16:04', videoId: 'pe3ndaTKjuM', thumbnail: 'https://img.youtube.com/vi/pe3ndaTKjuM/hqdefault.jpg' },
+  { id: 'v3', title: 'Morning Yoga Flow', category: 'Yoga', duration: '11:15', videoId: 'C2RAjUEAoLI', thumbnail: 'https://img.youtube.com/vi/C2RAjUEAoLI/hqdefault.jpg' },
+  { id: 'v4', title: 'Box Breathing Guide', category: 'Breathwork', duration: '05:39', videoId: 'VUjiXcfKBn8', thumbnail: 'https://img.youtube.com/vi/VUjiXcfKBn8/hqdefault.jpg' },
+  { id: 'v5', title: 'Full Body Stretching', category: 'Stretching', duration: '15:22', videoId: 'XQzqWAhiCJc', thumbnail: 'https://img.youtube.com/vi/XQzqWAhiCJc/hqdefault.jpg' },
+  { id: 'v6', title: 'Womb Healing Session', category: 'Womb Work', duration: '10:16', videoId: 'OKopcLRSmo8', thumbnail: 'https://img.youtube.com/vi/OKopcLRSmo8/hqdefault.jpg' }
 ];
 
 export const DAILY_TIPS = [
